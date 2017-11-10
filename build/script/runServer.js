@@ -40,7 +40,7 @@ var paths = (0, _paths2.default)(cwd);
 var compiler = void 0;
 
 require('yargs') // eslint-disable-line
-.usage('Usage: roadhog server [options]').help('h').argv;
+  .usage('Usage: roadhog server [options]').help('h').argv;
 
 var rcConfig = void 0;
 var config = void 0;
@@ -63,7 +63,7 @@ function readRcConfig() {
 }
 
 function readWebpackConfig() {
-  config = (0, _runArray2.default)(rcConfig, function (c) {
+  config = (0, _runArray2.default)(rcConfig, function(c) {
     return (0, _applyWebpackConfig2.default)(require('./config/webpack.config.dev')(c, cwd), process.env.NODE_ENV);
   });
 }
@@ -75,7 +75,7 @@ function setupCompiler(host, port, protocol) {
     console.log(e);
   }
 
-  compiler.plugin('invalid', function () {
+  compiler.plugin('invalid', function() {
     if (isInteractive) {
       clearConsoleWrapped();
     }
@@ -83,7 +83,7 @@ function setupCompiler(host, port, protocol) {
   });
 
   var isFirstCompile = true;
-  compiler.plugin('done', function (stats) {
+  compiler.plugin('done', function(stats) {
     if (isInteractive) {
       clearConsoleWrapped();
     }
@@ -119,7 +119,7 @@ function setupCompiler(host, port, protocol) {
     if (messages.errors.length) {
       console.log(_chalk2.default.red('Failed to compile.'));
       console.log();
-      messages.errors.forEach(function (message) {
+      messages.errors.forEach(function(message) {
         console.log(message);
         console.log();
       });
@@ -128,7 +128,7 @@ function setupCompiler(host, port, protocol) {
     } else if (messages.warnings.length) {
       console.log(_chalk2.default.yellow('Compiled with warnings.'));
       console.log();
-      messages.warnings.forEach(function (message) {
+      messages.warnings.forEach(function(message) {
         console.log(message);
         console.log();
       });
@@ -183,7 +183,7 @@ function runDevServer(host, port, protocol) {
   addMiddleware(devServer);
   (0, _mock.applyMock)(devServer);
 
-  devServer.listen(port, '0.0.0.0', function (err) {
+  devServer.listen(port, '0.0.0.0', function(err) {
     if (err) {
       return console.log(err);
     }
@@ -211,7 +211,7 @@ function setupWatch(devServer) {
     ignored: /node_modules/,
     persistent: true
   });
-  watcher.on('change', function (path) {
+  watcher.on('change', function(path) {
     console.log(_chalk2.default.green('File ' + path.replace(paths.appDirectory, '.') + ' changed, try to restart server'));
     watcher.close();
     devServer.close();
@@ -237,7 +237,7 @@ function init() {
   readWebpackConfig();
 
   var HOST = process.env.HOST || '0.0.0.0';
-  (0, _WebpackDevServerUtils.choosePort)(HOST, DEFAULT_PORT).then(function (port) {
+  (0, _WebpackDevServerUtils.choosePort)(HOST, DEFAULT_PORT).then(function(port) {
     if (port === null) {
       return;
     }

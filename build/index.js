@@ -35,7 +35,7 @@ switch (script) {
     case 'test':
         require('atool-monitor').emit();
         result = spawn.sync(
-        'node', [require.resolve(`./lib/${script}`)].concat(args), { stdio: 'inherit' } // eslint-disable-line
+        'node', [require.resolve(`./script/${script}`)].concat(args), { stdio: 'inherit' } // eslint-disable-line
         );
         process.exit(result.status);
         break;
