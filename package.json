@@ -1,18 +1,36 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "node build/index.js server",
+    "build:stg": "node build/index.js build staging",
+    "build:prd": "node build/index.js build production",
+    "lint": "eslint --ext .js src test",
+    "precommit": "npm run lint"
+  },
+  "engines": {
+    "install-node": "6.11.1"
+  },
   "dependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "babel-runtime": "^6.9.2",
+    "dva": "^2.0.4",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0"
   },
   "devDependencies": {
-    "react-scripts": "1.0.17"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-dva-hmr": "^0.3.2",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "clean-webpack-plugin": "^0.1.17",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "expect": "^1.20.2",
+    "husky": "^0.12.0",
+    "moment": "^2.19.1",
+    "redbox-react": "^1.4.3",
+    "roadhog": "^1.2.1",
+    "yazl": "^2.4.3"
   }
 }
