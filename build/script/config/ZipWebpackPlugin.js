@@ -16,7 +16,6 @@ function ZipPlugin(options) {
 
 ZipPlugin.prototype.apply = function(compiler) {
 	var options = this.options;
-
     if (options.pathPrefix && path.isAbsolute(options.pathPrefix)) {
         throw new Error('"pathPrefix" must be a relative path');
     }
@@ -36,7 +35,6 @@ ZipPlugin.prototype.apply = function(compiler) {
 		var zipFile = new yazl.ZipFile();
 
 		var pathPrefix = options.pathPrefix || '';
-
 		// populate the zip file with each asset
 		for (var nameAndPath in compilation.assets) {
 

@@ -100,7 +100,6 @@ exports.default = function(args, appBuild, config, paths) {
                     NODE_ENV: NODE_ENV
                 })), [
                     new zipWebpackPlugin({
-                        path: resolveApp(`./dist/${nowEnv}/${folderName}/`),
                         outpath: resolveApp(`./dist/${nowEnv}`),
                         pathPrefix: `./`,
                         filename: `${folderName}_${build_time}`
