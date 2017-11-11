@@ -4,13 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = getPaths;
-
 var _require = require('path'),
     resolve = _require.resolve;
-
 var _require2 = require('fs'),
     realpathSync = _require2.realpathSync;
-
 function resolveOwn(relativePath) {
     return resolve(__dirname, relativePath);
 }

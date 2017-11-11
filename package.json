@@ -1,7 +1,11 @@
 {
+  "name": "react-demo",
+  "description": "A ant-design Project",
+  "author": "sunny<17765293970@163.com>",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node build/index.js server",
+    "start": "PORT=9992 node build/index.js server",
     "build:stg": "node build/index.js build staging",
     "build:prd": "node build/index.js build production",
     "lint": "eslint --ext .js src test",

@@ -266,61 +266,55 @@ function getCommonPlugins(_ref4) {
     paths = _ref4.paths,
     appBuild = _ref4.appBuild,
     NODE_ENV = _ref4.NODE_ENV;
-
     var ret = [];
-
+    // 定义常量
     var defineObj = {
-    'process.env': {
-        NODE_ENV: JSON.stringify(NODE_ENV)
-    }
+        'process.env': {
+            NODE_ENV: JSON.stringify(NODE_ENV)
+        }
     };
     if (config.define) {
-    defineObj = _extends({}, defineObj, (0, _normalizeDefine2.default)(config.define));
+        defineObj = _extends({}, defineObj, (0, _normalizeDefine2.default)(config.define));
     }
     ret.push(new _webpack2.default.DefinePlugin(defineObj));
-
     if ((0, _fs.existsSync)((0, _path.join)(paths.appSrc, 'index.ejs'))) {
-    ret.push(new _htmlWebpackPlugin2.default({
-        template: 'src/index.ejs',
-        inject: true
-    }));
+        ret.push(new _htmlWebpackPlugin2.default({
+            template: 'src/index.ejs',
+            inject: true
+        }));
     }
-
     if ((0, _fs.existsSync)(paths.appPublic)) {
-    ret.push(
-        new _copyWebpackPlugin2.default([
-            {
-                from: paths.appPublic,
-                to: appBuild
-            }
-        ])
-    );
+        ret.push(
+            new _copyWebpackPlugin2.default([
+                {
+                    from: paths.appPublic,
+                    to: appBuild
+                }
+            ])
+        );
     }
-
     if (config.multipage) {
-    // Support hash
-    var name = config.hash ? 'common.[hash]' : 'common';
-    ret.push(new _webpack2.default.optimize.CommonsChunkPlugin(
-        {
-            name: 'common',
-            filename: name + '.js'
-        }
-    ));
-    }
-
-    if (config.ignoreMomentLocale) {
-    ret.push(new _webpack2.default.IgnorePlugin(/^\.\/locale$/, /moment$/));
-    }
-
-    ret.push(new _webpack2.default.LoaderOptionsPlugin({
-    options: {
-        context: __dirname,
-        postcss: [(0, _autoprefixer2.default)(
-            config.autoprefixer || {
-                browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9']
+        // Support hash
+        var name = config.hash ? 'common.[hash]' : 'common';
+        ret.push(new _webpack2.default.optimize.CommonsChunkPlugin(
+            {
+                name: 'common',
+                filename: name + '.js'
             }
-        )].concat(_toConsumableArray(config.extraPostCSSPlugins ? config.extraPostCSSPlugins : []))
+        ));
     }
+    if (config.ignoreMomentLocale) {
+        ret.push(new _webpack2.default.IgnorePlugin(/^\.\/locale$/, /moment$/));
+    }
+    ret.push(new _webpack2.default.LoaderOptionsPlugin({
+        options: {
+            context: __dirname,
+            postcss: [(0, _autoprefixer2.default)(
+                config.autoprefixer || {
+                    browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9']
+                }
+            )].concat(_toConsumableArray(config.extraPostCSSPlugins ? config.extraPostCSSPlugins : []))
+        }
     }));
     return ret;
 }
