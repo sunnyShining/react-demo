@@ -36,5 +36,17 @@
     "redbox-react": "^1.4.3",
     "roadhog": "^1.2.1",
     "yazl": "^2.4.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunnyShining/react-demo.git"
+  },
+  "keywords": [
+    "ant-design"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunnyShining/react-demo/issues"
+  },
+  "homepage": "https://github.com/sunnyShining/react-demo#readme"
 }
