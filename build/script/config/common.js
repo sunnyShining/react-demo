@@ -82,7 +82,8 @@ function getResolve(config, paths) {
 
 function getFirstRules(_ref) {
     var paths = _ref.paths,
-        babelOptions = _ref.babelOptions;
+        babelOptions = _ref.babelOptions,
+        eslintOptions = _ref.eslintOptions;
 
     return [
         {
@@ -91,6 +92,14 @@ function getFirstRules(_ref) {
             options: {
                 limit: 10000,
                 name: 'static/[name].[hash:8].[ext]'
+            }
+        },  {
+            test: /\.(js|jsx)$/,
+            loader: 'eslint',
+            enforce: 'pre',
+            include: paths.appSrc,
+            options: {
+              formatter: require('eslint-friendly-formatter')
             }
         }, {
             test: /\.(js|jsx)$/,

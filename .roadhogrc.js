@@ -10,7 +10,6 @@ module.exports = {
             "sass": false,
             "hash": true,
             "publicPath": "/", // 注入html文件路径，开发环境，请勿修改
-            "listenPort": "8000" // 端口号
         },
         "production": {
             "extraBabelPlugins": [
