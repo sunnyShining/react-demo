@@ -1,3 +1,11 @@
+/**
+ * @author sunny
+ * @email 17765293970@163.com
+ * @create date 2017-11-17 09:57:09
+ * @modify date 2017-11-17 09:57:09
+ * @desc index页面redux
+*/
+
 import services from '../services/services.js';
 
 export default {

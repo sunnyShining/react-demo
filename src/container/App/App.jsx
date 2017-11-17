@@ -1,3 +1,11 @@
+/**
+ * @author sunny
+ * @email 17765293970@163.com
+ * @create date 2017-11-17 09:58:18
+ * @modify date 2017-11-17 09:58:18
+ * @desc 入口页面
+*/
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'dva';

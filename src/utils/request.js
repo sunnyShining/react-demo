@@ -1,3 +1,11 @@
+/**
+ * @author sunny
+ * @email 17765293970@163.com
+ * @create date 2017-11-17 09:55:32
+ * @modify date 2017-11-17 09:55:32
+ * @desc fetch封装
+*/
+
 import fetch from 'dva/fetch';
 
 function parseJSON(response) {
@@ -5,12 +13,21 @@ function parseJSON(response) {
 }
 
 function checkStatus(response) {
+    const type = response.headers.get('Content-Type');
     if (response.status >= 200 && response.status < 300) {
-        return response;
+        if (type.indexOf('application/json') !== -1) {
+            return response.json();
+        } else {
+            return response.text();
+        }
+    } else {
+        const error = {
+            code: '123456',
+            data: {},
+            msg: '网络或服务器错误',
+        };
+        return Promise.reject(error);
     }
-    const error = new Error(response.statusText);
-    error.response = response;
-    throw error;
 }
 
 /**
@@ -23,7 +40,10 @@ function checkStatus(response) {
 export default function request(url, options) {
     return fetch(url, options)
         .then(checkStatus)
-        .then(parseJSON)
-        .then(data => ({ data }))
-        .catch(err => ({ err }));
+        .then(data => {
+            return Promise.reslove(data);
+        })
+        .catch(err => {
+            return Promise.reject(err);
+        });
 }

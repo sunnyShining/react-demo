@@ -1,11 +1,14 @@
-// 所有接口请求写在此处
+/**
+ * @author sunny
+ * @email 17765293970@163.com
+ * @create date 2017-11-17 09:56:39
+ * @modify date 2017-11-17 09:56:39
+ * @desc 接口请求
+*/
 
+import { message } from 'antd';
 import request from '../utils/request';
 import urls from './urls';
-
-// export function query() {
-//   	return request('/api/users');
-// }
 
 export default {
     users(options = {}) {
@@ -18,7 +21,7 @@ export default {
             }).then((data) => {
                 resolve(data);
             }).catch((error) => {
-                reject(error);
+                message.error(error.msg);
             });
         });
     },

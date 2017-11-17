@@ -1,3 +1,11 @@
+/**
+ * @author sunny
+ * @email 17765293970@163.com
+ * @create date 2017-11-17 09:55:57
+ * @modify date 2017-11-17 09:55:57
+ * @desc 入口文件
+*/
+
 import 'babel-polyfill';
 import dva from 'dva';
 import { message } from 'antd';

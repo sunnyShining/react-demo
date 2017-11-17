@@ -1,9 +1,9 @@
 'use strict';
 
 const qs = require('qs');
-const mockjs = require('mockjs'); //导入mock.js的模块
+const mockjs = require('mockjs'); // 导入mock.js的模块
 
-const Random = mockjs.Random; //导入mock.js的随机数
+const Random = mockjs.Random; // 导入mock.js的随机数
 
 // 数据持久化   保存在global的全局变量中
 let tableListData = {};
@@ -12,22 +12,22 @@ if (!global.tableListData) {
   	const data = mockjs.mock({
     	'data|100': [{
       		'id|+1': 1,
-      		'name': () => {
+      		name: () => {
         		return Random.cname();
       		},
-      		'mobile': /1(3[0-9]|4[57]|5[0-35-9]|7[01678]|8[0-9])\d{8}/,
-      		'avatar': () => {
+      		mobile: /1(3[0-9]|4[57]|5[0-35-9]|7[01678]|8[0-9])\d{8}/,
+      		avatar: () => {
         		return Random.image('125x125');
       		},
       		'status|1-2': 1,
-      		'email': () => {
+      		email: () => {
         		return Random.email('visiondk.com');
       		},
       		'isadmin|0-1': 1,
-      		'created_at': () => {
+      		created_at: () => {
         		return Random.datetime('yyyy-MM-dd HH:mm:ss');
       		},
-      		'updated_at': () => {
+      		updated_at: () => {
         		return Random.datetime('yyyy-MM-dd HH:mm:ss');
       		},
     	}],
@@ -43,8 +43,8 @@ if (!global.tableListData) {
 }
 
 module.exports = {
-    //post请求  /api/users/ 是拦截的地址   方法内部接受 request response对象
-    'POST /users' (req, res) {
+    // post请求  /api/users/ 是拦截的地址   方法内部接受 request response对象
+    'POST /users'(req, res) {
       	const page = qs.parse(req.query);
       	const pageSize = page.pageSize || 10;
       	const currentPage = page.page || 1;
@@ -54,7 +54,7 @@ module.exports = {
 
       	let newData = tableListData.data.concat();
 
-      	//数据开始模拟
+      	// 数据开始模拟
       	if (page.field) {
        		const d = newData.filter((item) => {
           		return item[page.filed].indexOf(page.keyword) > -1;
@@ -73,15 +73,15 @@ module.exports = {
         	newPage = {
           		current: tableListData.page.current,
           		total: tableListData.page.total,
-        	}
+        	};
       	}
 
       	setTimeout(() => {
-	        res.json({ //将请求json格式返回
-	          	success: true,
+	        res.json({ // 将请求json格式返回
+	          	code: '000000',
 	          	data,
-	          	page: '123',
+	          	msg: 'success',
 	        });
       	}, 200);
     },
-}
+};

@@ -1,7 +1,11 @@
 /**
-* Created by sunny on 2017/05/03
-* 开心每一天！
-**/
+ * @author sunny
+ * @email 17765293970@163.com
+ * @create date 2017-11-17 09:55:04
+ * @modify date 2017-11-17 09:55:04
+ * @desc 域名
+*/
+
 
 function hostName() {
     if (process.env.NODE_ENV === 'development') {
@@ -21,5 +25,5 @@ function hostName() {
 const host = hostName();
 export default {
     // 测试接口
-    users: host.face + '/users',
+    users: host.face + '/users1',
 };

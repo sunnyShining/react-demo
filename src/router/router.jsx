@@ -1,3 +1,11 @@
+/**
+ * @author sunny
+ * @email 17765293970@163.com
+ * @create date 2017-11-17 09:53:36
+ * @modify date 2017-11-17 09:53:36
+ * @desc 路由
+*/
+
 import React from 'react';
 import { Route, Switch, routerRedux, Redirect } from 'dva/router';
 import dynamic from 'dva/dynamic';
