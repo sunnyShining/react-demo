@@ -1,6 +1,6 @@
 
 export default {
-    namespace: 'example',
+    namespace: 'app',
     state: {},
     subscriptions: {
         setup({ dispatch, history }) {  // eslint-disable-line

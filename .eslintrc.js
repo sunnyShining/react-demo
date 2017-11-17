@@ -26,13 +26,17 @@ module.exports = {
         "react/prefer-stateless-function": [0],
         "react/prop-types": [0],
         "require-yield": [1],
-        "indent": [2, 4],
+        "indent": "off",
         "semi": [2, "always"],
         "no-tabs": 0,
         "no-new": 0,
+        "no-mixed-spaces-and-tabs": 0,
+        "react/jsx-first-prop-new-line": "off",
         "no-console": "off", // 关闭不允许console，提交时可以打开
         "prefer-template": "off", // es6方法拼接字符串
         "arrow-parens": "off", // 允许箭头函数不写括号
+        "no-unused-vars": "off",
+        "prefer-const": "off", // 关闭未改变的值用const
         "no-debugger": process.env.NODE_ENV === 'production' ? 2 : 0
     },
     "parserOptions": {

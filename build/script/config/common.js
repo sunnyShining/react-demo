@@ -91,7 +91,7 @@ function getFirstRules(_ref) {
             loader: 'url',
             options: {
                 limit: 10000,
-                name: 'static/[name].[hash:8].[ext]'
+                name: 'static/images/[name].[hash:8].[ext]'
             }
         },  {
             test: /\.(js|jsx)$/,

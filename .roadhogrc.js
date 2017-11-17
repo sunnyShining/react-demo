@@ -19,8 +19,8 @@ module.exports = {
             "publicPath": "/",
             "sass": false,
             "hash": true,
-            "folderName": "BROP-NEWIIA.html",
-            "outputPath": "./dist/prd/BROP-NEWIIA"
+            "folderName": "TEST",
+            "outputPath": "./dist/prd/TEST"
         },
         "staging": { // 环境
             "extraBabelPlugins": [
@@ -31,7 +31,7 @@ module.exports = {
             "sass": false, // 暂不使用sass，如需使用此处为配置node-sass相关参数
             "hash": true, // 使用hash
             "folderName": "BROP-NEWIIA.html", // 根据打包最后zip包文件名
-            "outputPath": "./dist/stg/BROP-NEWIIA" // 打包路径
+            "outputPath": "./dist/stg/TEST" // 打包路径
         }
     }
 }

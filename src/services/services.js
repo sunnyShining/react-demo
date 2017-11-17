@@ -14,7 +14,7 @@ export default {
                 method: 'POST',
                 mode: 'cors',
                 credentials: 'include',
-                body: JSON.stringify(options.qs),
+                body: JSON.stringify(options),
             }).then((data) => {
                 resolve(data);
             }).catch((error) => {
