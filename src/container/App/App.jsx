@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'dva';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import { withRouter } from 'dva/router';
-import './App.less';
+import styles from './App.less';
 
 const { Header, Footer, Sider, Content } = Layout;
 const { SubMenu } = Menu;
@@ -25,16 +25,16 @@ class App extends Component {
     	return (
       		<div>
         		<Layout>
-          			<Header className="header">
+          			<Header className={styles.header}>
             			<div className="logo">1213</div>
           			</Header>
           			<Layout>
-            			<Sider>Sider</Sider>
-            			<Content>
+            			<Sider className={styles.sider}>Sider</Sider>
+            			<Content className={styles.content}>
               				<div>{ this.props.children }</div>
             			</Content>
           			</Layout>
-          			<Footer>Footer</Footer>
+          			<Footer className={styles.footer}>Footer</Footer>
         		</Layout>
       		</div>
       );
