@@ -9,7 +9,6 @@
 import React from 'react';
 import { Route, Switch, routerRedux, Redirect } from 'dva/router';
 import dynamic from 'dva/dynamic';
-import IndexPage from '../container/IndexPage/IndexPage.jsx';
 import App from '../container/App/App.jsx';
 
 const { ConnectedRouter } = routerRedux;

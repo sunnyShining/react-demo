@@ -8,10 +8,6 @@
 
 import fetch from 'dva/fetch';
 
-function parseJSON(response) {
-    return response.json();
-}
-
 function checkStatus(response) {
     const type = response.headers.get('Content-Type');
     if (response.status >= 200 && response.status < 300) {
@@ -41,7 +37,7 @@ export default function request(url, options) {
     return fetch(url, options)
         .then(checkStatus)
         .then(data => {
-            return Promise.reslove(data);
+            return Promise.resolve(data);
         })
         .catch(err => {
             return Promise.reject(err);

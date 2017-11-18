@@ -9,8 +9,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'dva';
+import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import { withRouter } from 'dva/router';
 import './App.less';
+
+const { Header, Footer, Sider, Content } = Layout;
+const { SubMenu } = Menu;
 
 class App extends Component {
     constructor(props) {
@@ -20,8 +24,18 @@ class App extends Component {
     render() {
     	return (
       		<div>
-            	app
-            	<div>{ this.props.children }</div>
+        		<Layout>
+          			<Header className="header">
+            			<div className="logo">1213</div>
+          			</Header>
+          			<Layout>
+            			<Sider>Sider</Sider>
+            			<Content>
+              				<div>{ this.props.children }</div>
+            			</Content>
+          			</Layout>
+          			<Footer>Footer</Footer>
+        		</Layout>
       		</div>
       );
     }

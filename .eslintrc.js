@@ -27,6 +27,7 @@ module.exports = {
         "react/prop-types": [0],
         "require-yield": [1],
         "indent": "off",
+        "react/jsx-indent": "off",
         "semi": [2, "always"],
         "no-tabs": 0,
         "no-new": 0,

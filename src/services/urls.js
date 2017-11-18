@@ -25,5 +25,5 @@ function hostName() {
 const host = hostName();
 export default {
     // 测试接口
-    users: host.face + '/users1',
+    users: host.face + '/users',
 };
