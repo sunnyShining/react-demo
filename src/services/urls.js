@@ -6,17 +6,16 @@
  * @desc 域名
 */
 
-
 function hostName() {
-    if (process.env.NODE_ENV === 'development') {
+    if (ENV === 'development') {
         return {
             face: 'http://localhost:9992',
         };
-    } else if (process.env.NODE_ENV === 'staging') {
+    } else if (ENV === 'staging') {
         return {
             face: 'http://127.0.0.1:9992',
         };
-    } else if (process.env.NODE_ENV === 'production') {
+    } else if (ENV === 'production') {
         return {
             face: 'http://127.0.0.1:9992',
         };

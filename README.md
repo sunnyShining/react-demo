@@ -1,5 +1,6 @@
 #A React.js project
 
+> 改写dva-cli出来的脚手架，仿ant-admin改写，支持js文件和img文件和css文件打包存放位置修改
 
 ## 一、开发环境
 
@@ -13,7 +14,7 @@
 $ yarn
 或
 $ npm i
-``` 
+```
 
 **2.开发本地服务**
 
@@ -90,8 +91,6 @@ https://ant.design/docs/react/introduce-cn
 **8.相关资源(图片，less，font)**
 资源放在./src/assets/下对应文件
 
-**9.公共资源**
-公共资源放在public下
 
 ## 四、架构相关配置
 

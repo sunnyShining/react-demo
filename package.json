@@ -5,9 +5,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "PORT=9992 node build/index.js server",
-    "build:stg": "node build/index.js build staging",
-    "build:prd": "node build/index.js build production",
+    "start": "PORT=9992 roadhog server",
+    "build:stg": "export NODE_ENV=staging && roadhog build",
+    "build:prd": "export NODE_ENV=production && roadhog build",
     "lint": "eslint --ext .js src test",
     "precommit": "npm run lint"
   },
