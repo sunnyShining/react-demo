@@ -33,6 +33,7 @@ module.exports = {
         "semi": [2, "always"],
         "no-tabs": 0,
         "no-new": 0,
+        "func-names": "off",
         "no-mixed-spaces-and-tabs": 0,
         "react/jsx-first-prop-new-line": "off",
         "no-console": "off", // 关闭不允许console，提交时可以打开

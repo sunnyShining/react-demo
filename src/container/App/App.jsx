@@ -9,7 +9,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'dva';
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { Layout, Menu, Breadcrumb, Icon, Spin } from 'antd';
 import { withRouter } from 'dva/router';
 import styles from './App.less';
 
@@ -22,20 +22,23 @@ class App extends Component {
 		console.log(props);
     }
     render() {
+		let { loading } = this.props;
     	return (
       		<div>
-        		<Layout>
-          			<Header className={styles.header}>
-            			<div className="logo">1213</div>
-          			</Header>
-          			<Layout>
-            			<Sider className={styles.sider}>Sider</Sider>
-            			<Content className={styles.content}>
-              				<div>{ this.props.children }</div>
-            			</Content>
-          			</Layout>
-          			<Footer className={styles.footer}>Footer</Footer>
-        		</Layout>
+				<Spin size="large" tip="Loading..." spinning={loading.global}>
+					<Layout>
+						<Header className={styles.header}>
+							<div className="logo">1213</div>
+						</Header>
+						<Layout>
+							<Sider className={styles.sider}>Sider</Sider>
+							<Content className={styles.content}>
+								<div>{ this.props.children }</div>
+							</Content>
+						</Layout>
+						<Footer className={styles.footer}>Footer</Footer>
+					</Layout>
+				</Spin>
       		</div>
       );
     }
@@ -47,7 +50,7 @@ App.propTypes = {
   // location: PropTypes.object,
   // dispatch: PropTypes.func,
   // app: PropTypes.object,
-  // loading: PropTypes.object,
+  loading: PropTypes.object,
 };
 
 export default withRouter(connect(({ app, loading }) => ({ app, loading }))(App));

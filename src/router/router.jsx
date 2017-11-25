@@ -14,7 +14,6 @@ import App from '../container/App/App.jsx';
 const { ConnectedRouter } = routerRedux;
 
 function RouterConfig({ history, app }) {
-	console.log(app);
 	const error = dynamic({
 		app,
 		component: () => import('../container/Error/Error.jsx'),
