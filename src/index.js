@@ -15,12 +15,11 @@ import './assets/css/reset.css';
 
 // 1. Initialize
 const app = dva({
-    ...createLoading({
-		effects: true,
-	}),
+    ...createLoading(),
     history: createHistory(),
     onError(error) {
-		message.error(error.message);
+    	// 弹出全局的错误信息
+		message.error(error.message || error.msg);
 	},
 });
 

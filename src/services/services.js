@@ -21,7 +21,9 @@ export default {
             }).then((data) => {
                 resolve(data);
             }).catch((error) => {
-                message.error(error.msg);
+                reject(error);
+                // 交予全局处理
+                // message.error(error.msg);
             });
         });
     },
