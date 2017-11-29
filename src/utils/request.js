@@ -7,6 +7,7 @@
 */
 
 import fetch from 'dva/fetch';
+import Loading from '../components/Loading/index';
 
 function checkStatus(response) {
     const type = response.headers.get('Content-Type');
@@ -17,11 +18,13 @@ function checkStatus(response) {
             return response.text();
         }
     } else {
-        const error = {
-            code: '123456',
-            data: {},
-            msg: '网络或服务器错误',
-        };
+        // const error = {
+        //     code: '123456',
+        //     data: {},
+        //     msg: '网络或服务器错误',
+        // };
+        const error = new Error(response.statusText);
+        error.response = response;
         return Promise.reject(error);
     }
 }
@@ -34,12 +37,15 @@ function checkStatus(response) {
  * @return {object}           An object containing either "data" or "err"
  */
 export default function request(url, options) {
+    Loading.open();
     return fetch(url, options)
         .then(checkStatus)
         .then(data => {
+            Loading.close();
             return Promise.resolve(data);
         })
         .catch(err => {
+            Loading.close();
             return Promise.reject(err);
         });
 }

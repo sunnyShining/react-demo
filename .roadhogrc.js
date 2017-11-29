@@ -12,6 +12,7 @@ module.exports = {
             },
             "sass": false,
             "hash": true,
+            "disableCSSModules": true,
             "publicPath": "/", // 注入html文件路径，开发环境，请勿修改
         },
         "production": {
@@ -26,6 +27,7 @@ module.exports = {
             "publicPath": "/",
             "sass": false,
             "hash": true,
+            "disableCSSModules": true,
             "folderName": "TEST",
             "outputPath": "./dist/prd/TEST"
         },
@@ -40,6 +42,7 @@ module.exports = {
             "publicPath": "/", // 注入html链接地址，根据需要使用
             "sass": false, // 暂不使用sass，如需使用此处为配置node-sass相关参数
             "hash": true, // 使用hash
+            "disableCSSModules": true, // css classname不适用hash
             "folderName": "TEST", // 根据打包最后zip包文件名
             "outputPath": "./dist/stg/TEST" // 打包路径
         }

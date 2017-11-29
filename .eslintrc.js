@@ -3,7 +3,8 @@ module.exports = {
     "parser": "babel-eslint",
     "extends": "airbnb",
     "globals": {
-        "ENV": true
+        "ENV": true,
+        "document": true
     },
     "rules": {
         "arrow-body-style": [0],
@@ -27,12 +28,14 @@ module.exports = {
         "react/jsx-no-bind": [0],
         "react/prefer-stateless-function": [0],
         "react/prop-types": [0],
+        "react/no-render-return-value": "off",
         "require-yield": [1],
         "indent": "off",
         "react/jsx-indent": "off",
         "semi": [2, "always"],
         "no-tabs": 0,
         "no-new": 0,
+        "no-param-reassign": "off",
         "func-names": "off",
         "no-mixed-spaces-and-tabs": 0,
         "react/jsx-first-prop-new-line": "off",

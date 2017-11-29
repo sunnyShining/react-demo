@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'dva';
 import { Layout, Menu, Breadcrumb, Icon, Spin } from 'antd';
 import { withRouter } from 'dva/router';
-import styles from './App.less';
+import './App.less';
 
 const { Header, Footer, Sider, Content } = Layout;
 const { SubMenu } = Menu;
@@ -25,20 +25,20 @@ class App extends Component {
 		let { loading } = this.props;
     	return (
       		<div>
-				<Spin size="large" tip="Loading..." spinning={loading.global}>
+				{/* <Spin size="large" tip="Loading..." spinning={loading.global}>*/}
 					<Layout>
-						<Header className={styles.header}>
+						<Header className="header">
 							<div className="logo">1213</div>
 						</Header>
 						<Layout>
-							<Sider className={styles.sider}>Sider</Sider>
-							<Content className={styles.content}>
+							<Sider className="sider">Sider</Sider>
+							<Content className="content">
 								<div>{ this.props.children }</div>
 							</Content>
 						</Layout>
-						<Footer className={styles.footer}>Footer</Footer>
+						<Footer className="footer">Footer</Footer>
 					</Layout>
-				</Spin>
+				{/* </Spin>*/}
       		</div>
       );
     }

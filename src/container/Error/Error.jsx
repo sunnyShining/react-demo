@@ -8,13 +8,13 @@
 
 import React, { Component } from 'react';
 import { Icon } from 'antd';
-import styles from './Error.less';
+import './Error.less';
 
 export default class Error extends Component {
 	render() {
 		return (
   			<div className="content-inner">
-    			<div className={styles.error}>
+    			<div className="error">
       				<Icon type="frown-o" />
       				<h1>404 Not Found</h1>
     			</div>

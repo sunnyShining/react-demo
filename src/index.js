@@ -11,6 +11,7 @@ import dva from 'dva';
 import { message } from 'antd';
 import createLoading from 'dva-loading'; // 引入loading
 import createHistory from 'history/createBrowserHistory';
+import flexible from 'flexible'; // 引入flexible.js
 import './assets/css/reset.css';
 
 // 1. Initialize
