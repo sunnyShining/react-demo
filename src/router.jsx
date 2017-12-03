@@ -9,20 +9,20 @@
 import React from 'react';
 import { Route, Switch, routerRedux, Redirect } from 'dva/router';
 import dynamic from 'dva/dynamic';
-import App from '../container/App/App.jsx';
+import App from './routes/App/App.jsx';
 
 const { ConnectedRouter } = routerRedux;
 
 function RouterConfig({ history, app }) {
 	const error = dynamic({
 		app,
-		component: () => import('../container/Error/Error.jsx'),
+		component: () => import('./routes/Error/Error.jsx'),
 	});
 	const routes = [
 	    {
 		path: '/indexPage',
-		    models: () => [import('../models/indexPage.js')],
-	        component: () => import('../container/IndexPage/IndexPage.jsx'),
+		    models: () => [import('./models/indexPage.js')],
+	        component: () => import('./routes/IndexPage/IndexPage.jsx'),
 	    },
 	];
     return (
