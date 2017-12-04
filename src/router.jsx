@@ -20,7 +20,7 @@ function RouterConfig({ history, app }) {
 	});
 	const routes = [
 	    {
-		path: '/indexPage',
+            path: '/indexPage',
 		    models: () => [import('./models/indexPage.js')],
 	        component: () => import('./routes/IndexPage/IndexPage.jsx'),
 	    },
