@@ -16,12 +16,12 @@
     "install-node": "6.11.1"
   },
   "dependencies": {
-    "antd": "^2.13.9",
+    "antd": "^3.0.0",
     "babel-runtime": "^6.9.2",
     "dva": "^2.0.4",
     "dva-loading": "^1.0.4",
-    "react": "^15.4.0",
-    "react-dom": "^15.4.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
